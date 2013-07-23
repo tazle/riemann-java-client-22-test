@@ -12,8 +12,17 @@ import java.io.IOException;
  */
 public class App {
     public static void main( String[] args ) throws IOException {
-        final String host = args[0];
-        final int port = Integer.parseInt(args[1]);
+        final String host;
+        final int port;
+
+        try {
+            host = args[0];
+            port = Integer.parseInt(args[1]);
+        } catch (final Exception e) {
+            System.err.println("Usage: java -jar <jar> hostname port");
+            System.exit(1);
+            throw new RuntimeException("unreachable");
+        }
 
         final UdpTransport transport = new UdpTransport(host, port);
         transport.setExceptionReporter(new ExceptionReporter() {
