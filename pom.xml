@@ -11,7 +11,7 @@
     <dependency>
       <groupId>com.aphyr</groupId>
       <artifactId>riemann-java-client</artifactId>
-      <version>0.2.4-P3</version>
+      <version>0.2.5-SNAPSHOT</version>
     </dependency>
   </dependencies>
     <build>
